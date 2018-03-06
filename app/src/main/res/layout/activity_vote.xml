@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="eu.z3r0byteapps.posterroaster.VoteActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:theme="@style/ToolBarStyle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/start_layout"
+        android:layout_below="@+id/Toolbar">
+
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/poster-id"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="Poster-ID" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/poster-id"
+            android:id="@+id/vote"
+            android:text="Stemmers winnen" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/captcha_layout"
+        android:visibility="gone"
+        android:layout_below="@+id/Toolbar">
+
+        <ImageView
+            android:id="@+id/captcha"
+            android:layout_width="480px"
+            android:layout_height="224px"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop" />
+
+        <EditText
+            android:id="@+id/captcha_solution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/captcha"
+            android:hint="Oplossing"
+            android:singleLine="true"
+            android:imeActionLabel="Stem"
+            android:imeOptions="actionSend"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/vote_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/captcha_solution"
+            android:padding="16dp" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/stop"
+            android:text="Stoppen" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
